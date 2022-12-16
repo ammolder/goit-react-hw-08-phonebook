@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  display: inline-block;
+  display: block;
+  width: 350px;
+
   margin-bottom: 50px;
 `;
 
 export const Label = styled.label`
   color: #f441a5;
   display: grid;
-  place-items: center;
+  /* place-items: center; */
 `;
 
 export const Input = styled.input`
+  width: 100%;
+
   color: ${p => p.theme.colors.title};
   margin-bottom: 5px;
   border: 1px solid ${p => p.theme.colors.blue};
@@ -32,7 +36,7 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   text-decoration: none;
-  position: absolute;
+  /* position: absolute; */
   border: none;
   font-size: 14px;
   font-family: inherit;

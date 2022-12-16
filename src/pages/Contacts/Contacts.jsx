@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 
-import CircularProgress from '@mui/material/CircularProgress';
-import { Wrapper } from './Contacts.styled.js';
+import { Wrapper, TitleEl, SpanEl, SpinnerEl } from './Contacts.styled.js';
 import { ContactsForm } from 'components/ContactsForm';
 import { ContactsList } from 'components/ContactsList';
 import { Filter } from 'components/Filter';
@@ -19,16 +18,20 @@ const Contacts = () => {
 
   return (
     <Wrapper>
-      <h1>Phonebook</h1>
-      <ContactsForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && !error && (
-        <b>
-          <CircularProgress />
-        </b>
-      )}
-      <ContactsList />
+      <SpanEl>
+        <TitleEl>Phonebook</TitleEl>
+        <ContactsForm />
+      </SpanEl>
+      <SpanEl>
+        <TitleEl>Filter</TitleEl>
+        <Filter />
+        {isLoading && !error && <SpinnerEl size="xl" />}
+      </SpanEl>
+      <SpanEl>
+        <TitleEl>Contacts</TitleEl>
+
+        <ContactsList />
+      </SpanEl>
     </Wrapper>
   );
 };

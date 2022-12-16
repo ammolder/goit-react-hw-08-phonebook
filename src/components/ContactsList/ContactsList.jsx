@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { deleteContact } from 'redux/contacts/operations';
 
-import { Button } from './ContactsList.styled.js';
+import { List, Button } from './ContactsList.styled.js';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const ContactsList = () => {
   };
   const visibleContacts = filterContacts();
   return (
-    <ul>
+    <List>
       {visibleContacts.map(({ id, name, number }) => (
         <li key={id}>
           {name}: {number}
@@ -34,6 +34,6 @@ export const ContactsList = () => {
           </Button>
         </li>
       ))}
-    </ul>
+    </List>
   );
 };

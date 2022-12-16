@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { Button } from '@chakra-ui/react';
 
-export const NavEl = styled.nav`
-  display: flex;
+export const ButtonEl = styled(Button)`
+  font-size: 22px;
+  margin-left: 15px;
 `;

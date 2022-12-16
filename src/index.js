@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import { StyledEngineProvider } from '@mui/material/styles';
+import { ChakraProvider } from '@chakra-ui/react';
 
 import { store, persistor } from './redux/store';
 import { App } from 'components/App';
@@ -24,9 +24,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/goit-react-hw-08-phonebook">
           <ThemeProvider theme={theme}>
-            <StyledEngineProvider injectFirst>
+            <ChakraProvider>
               <App />
-            </StyledEngineProvider>
+            </ChakraProvider>
           </ThemeProvider>
         </BrowserRouter>
       </PersistGate>

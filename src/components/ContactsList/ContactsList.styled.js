@@ -13,3 +13,5 @@ export const Button = styled.button`
   background-size: 300%;
   border-radius: 30px;
 `;
+
+export const List = styled.ul``;

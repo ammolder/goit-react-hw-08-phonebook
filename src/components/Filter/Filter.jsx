@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/contacts/slices/filterSlice';
+import { Text, Label, InputEl } from './Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -11,14 +12,16 @@ export const Filter = () => {
   };
 
   return (
-    <label>
-      Find contacts by name
-      <input
+    <Label>
+      <Text>Find contacts by name</Text>
+      <InputEl
         type="text"
         name="filter"
+        color="teal"
         placeholder="Please enter a name"
+        _placeholder={{ color: 'inherit' }}
         onChange={onSearch}
       />
-    </label>
+    </Label>
   );
 };

@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
-
+import { Wrapper, TitleEl, TextEl, LinkEl } from './Home.styled';
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to your Phone Book!</h1>
-      <p>Create your own contacts list, which will be available only to you</p>
-      <Link to="/contacts">Try it now</Link>
-    </div>
+    <Wrapper>
+      <TitleEl>Welcome to your Phone Book!</TitleEl>
+      <TextEl>
+        Create your own contacts list, which will be available only to you
+      </TextEl>
+      <LinkEl to="/contacts">Try it now</LinkEl>
+    </Wrapper>
   );
 };
 export default Home;
